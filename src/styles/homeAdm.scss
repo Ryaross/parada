@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+@import './functions';
+@import './colors';
+
+* { @include boxSet(); }
+
+body {
+    @include flexSet(center, center, default);
+    @include wdSet(100vh, 100%);
+}
+
+.container {
+    @include flexSet(center, center, row);
+    @include wdSet(100vh, 100%);
+
+    .navbar {
+        @include flexSet(space-between,default, column);
+        @include wdSet(100vh, 15%);
+        position: fixed; 
+        left: 0;
+        top: 0; 
+        background: $mainColor;
+
+        .logoBox {
+            text-align: center;
+
+            img {
+                width: 12rem;
+            }
+        }
+
+        ul li {
+            list-style: none
+        }
+
+        ul li a {
+            @include flexSet(default, center, default);
+            margin: 8px 0;
+            padding: 14px 12px;
+            color: $wtColor;
+
+            span {
+                margin-left: 20px;
+            }
+        }
+
+        ul li a:hover {
+            padding-left: 20px;
+            background: $wtColor;
+            color: $mainColor
+        }
+
+        .logout {
+            margin-bottom: 10%;
+        }
+    }
+
+    .containerGen {
+        @include flexSet(center, center, column);
+        @include wdSet(100vh, 100%);
+
+        .cards {
+            @include flexSet(center, center, row);
+            flex-wrap: wrap;
+            padding: 2rem 0rem;
+            width: 60%;
+
+            .cardContainer {
+                margin: 1rem;
+                padding: 2rem 2rem;
+                width: 25rem;
+                background: #fff;
+                box-shadow: 5px 5px 15px $shadow2;
+
+                i {
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                    color: $mainColor;
+                }
+
+                h2 {
+                    color: $mainColor;
+                }
+
+                p {
+                    color: $shadow5;
+                }
+            }
+        }
+    }
+}
